@@ -1,10 +1,19 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.tsx",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    fallback: {
+      stream: require.resolve("stream-browserify"),
+      buffer: require.resolve("buffer"),
+      os: require.resolve("os-browserify/browser"),
+      https: require.resolve("https-browserify"),
+      http: require.resolve("stream-http"),
+      crypto: require.resolve("crypto-browserify"),
+    },
   },
   module: {
     rules: [
@@ -39,6 +48,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       favicon: "./public/favicon.ico",
+    }),
+    new webpack.ProvidePlugin({
+      Buffer: ["buffer", "Buffer"],
+    }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
     }),
   ],
   stats: "errors-only",
