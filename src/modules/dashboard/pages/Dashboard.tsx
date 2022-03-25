@@ -2,6 +2,8 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { homePath } from "../../../logic/paths"
 import Web3 from 'web3'
+import { Table } from "../../../shared/table/table"
+import { CellProps } from "react-table"
 
 const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545")
 
@@ -32,10 +34,42 @@ const StyledLink = styled<any>(Link)`
 export const Dashboard: React.FC = () => {
     console.log('web3 object: ', web3);
 
+    const tableData = [
+        { index: 0, name: 'xyz' },
+        { index: 1, name: 'abc' },
+        { index: 2, name: '123' },
+    ]
+
+    const columns = [
+        {
+            Header: 'Index',
+            accessor: 'index',
+            Cell: ({ row }: CellProps<any>) => {
+                return (
+                    <span>
+                        {row.original.index}
+                    </span>
+                )
+            },
+        },
+        {
+            Header: 'Name',
+            accessor: 'name',
+            Cell: ({ row }: CellProps<any>) => {
+                return (
+                    <span>{row.original.name}</span>
+                )
+            },
+            className: 'left'
+        },
+    ]
+
     return <DashboardWrap>
         <div>
-            <span>Example Navigation</span>
+            <span>Example Navigation </span>
             <StyledLink to={homePath}>Home</StyledLink>
         </div>
+        <span>Example Table</span>
+        <Table columns={columns} data={tableData} scrollingTable={true} withAllBorders={true} noFooter={true} />
     </DashboardWrap>
 }

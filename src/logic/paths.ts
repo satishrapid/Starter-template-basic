@@ -9,5 +9,5 @@ export interface UserUrlProps extends UserProps {
 
 // Basic
 export const rootPath: UrlPath<{}> = '/'
-export const homePath: UrlPath<{}> = 'home'
+export const homePath: UrlPath<{}> = '/home'
 export const userPath: UrlPath<UserUrlProps> = `${homePath}/user/:user`

@@ -298,3 +298,10 @@ export function getQueryParamInt(queryParams: any, key: string): number | undefi
     const value = queryParams[key]
     return value ? parseInt(value) : undefined
 }
+
+export function matchesPath(path: string, value: string, exact: boolean): boolean {
+    const generalized = path.replace(/:\w+/g, '[^/]*?')
+    const pattern = `^${generalized}${exact ? '$' : ''}`
+    const regex = new RegExp(pattern)
+    return !!value.match(regex)
+}
