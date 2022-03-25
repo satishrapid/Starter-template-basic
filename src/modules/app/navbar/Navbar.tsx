@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { HeaderContainer, LogoContainer, Navigations } from './style'
-import { imageUrl } from '../../../../shared/utility'
-import { FlexBox } from '../../../../shared/flexBox'
-import { rootPath } from "../../../../logic/paths";
+import { imageUrl } from '../../../shared/utility'
+import { FlexBox } from '../../../shared/flexBox'
+import { rootPath } from "../../../logic/paths";
 
 
 export const Navbar = () => {

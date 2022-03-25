@@ -1,8 +1,8 @@
 import "./App.css"
-import { RoutesComponent } from "../components/routes/Routes"
+import { RoutesComponent } from "./routes/Routes"
 import { ThemeProvider } from "styled-components"
-import { getTheme, Themes } from "../../../styles/theme"
-import { GlobalStyle } from "../../../styles/global"
+import { getTheme, Themes } from "../../styles/theme"
+import { GlobalStyle } from "../../styles/global"
 
 export const App = () => {
 

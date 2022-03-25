@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom"
-import { homePath, rootPath } from "../../../../logic/paths"
-import { Dashboard } from "../../../dashboard/pages/Dashboard"
-import { Home } from "../../../home/pages/Home"
+import { homePath, rootPath } from "../../../logic/paths"
+import { Dashboard } from "../../dashboard/pages/Dashboard"
+import { Home } from "../../home/pages/Home"
 
 const notFoundRoute: RouteDefinition = {
     path: "*",

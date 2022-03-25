@@ -1,7 +1,8 @@
 {
-    "presets": [
-      "@babel/react",
-      "@babel/typescript",
-      ["@babel/env", { "modules": "auto" }]
-    ]
+  "presets": [
+    // "@babel/react",
+    "@babel/typescript",
+    ["@babel/env", { "modules": "auto" }],
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ]
 }

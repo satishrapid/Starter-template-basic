@@ -23,7 +23,7 @@ import {
     GR_Second,
     ForumStyle,
 } from './style'
-import { Navbar } from '../../app/components/navbar/Navbar'
+import { Navbar } from '../../app/navbar/Navbar'
 import { withTheme, ThemeProps } from 'styled-components'
 import { PageContainer } from '../../../styles/styled'
 

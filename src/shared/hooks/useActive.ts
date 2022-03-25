@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-export const useActive = () => {
+interface I_UseActiveBundle {
+  active: boolean
+  bind: {
+    onMouseDown: () => void
+    onMouseUp: () => void
+  }
+}
+
+export const useActive = (): I_UseActiveBundle => {
   const [active, set] = useState(false);
   return {
     active,
