@@ -1,66 +1,73 @@
 {
-  "name": "base-template",
-  "version": "0.1.0",
+  "name": "temp",
   "private": true,
+  "version": "1.0",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
-    "@babel/plugin-proposal-decorators": "^7.16.4",
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "@reduxjs/toolkit": "^1.8.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@types/react-table": "^7.7.10",
     "@types/styled-components": "^5.1.17",
+    "@vitejs/plugin-react": "^1.2.0",
     "babel-plugin-styled-components": "^2.0.1",
     "css-loader": "^6.5.0",
+    "path": "^0.12.7",
     "polished": "^4.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-router-dom": "6",
     "react-scripts": "4.0.3",
+    "react-table": "^7.7.0",
     "style-loader": "^3.3.1",
-    "styled-components": "^5.3.3",
-    "typescript": "^4.1.2",
+    "styled-components": "^5.3.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.6",
     "web-vitals": "^1.0.1",
     "web3": "^1.7.1",
     "web3-react": "^5.0.5"
   },
-  "scripts": {
-    "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
-    "build": "webpack --config webpack/webpack.config.js --env env=prod",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/plugin-transform-runtime": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
-    "babel-loader": "^8.2.3",
-    "html-webpack-plugin": "^5.5.0",
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@reduxjs/toolkit": "^1.8.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@types/styled-components": "^5.1.17",
+    "@vitejs/plugin-react": "^1.2.0",
+    "babel-plugin-styled-components": "^2.0.1",
+    "css-loader": "^6.5.0",
     "path": "^0.12.7",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.4.0"
+    "polished": "^4.1.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "6",
+    "react-scripts": "4.0.3",
+    "react-table": "^7.7.0",
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.6",
+    "web-vitals": "^1.0.1",
+    "web3-react": "^5.0.5"
   }
 }

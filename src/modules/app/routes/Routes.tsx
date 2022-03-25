@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom"
 import { homePath, rootPath } from "../../../logic/paths"
+import { withHeader } from "../../../shared/hocs/withHeader"
 import { Dashboard } from "../../dashboard/pages/Dashboard"
 import { Home } from "../../home/pages/Home"
 
@@ -26,7 +27,8 @@ export const routes: RouteDefinition[] = [
         title: "Home",
         pathType: 0,
     },
-].concat(notFoundRoute as any) // Ensure that notFound is the last route
+].map(r => ({ ...r, element: withHeader(r.element) }))
+    .concat(notFoundRoute as any) // Ensure that notFound is the last route
 
 export interface RouteDefinition {
     path: string
