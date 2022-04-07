@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { homePath } from "../../../logic/paths"
 import Web3 from 'web3'
-import { Table } from "../../../shared/table/table"
 import { CellProps } from "react-table"
+import { Table } from "../../shared/table/table"
+import { homePath } from "../../logic/paths"
 
 const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545")
 

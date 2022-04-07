@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { imageUrl } from "../../../shared/utility"
+import { imageUrl } from "../../shared/utility"
 
 export const HomeBody = styled.div`
   color: #ffff;
