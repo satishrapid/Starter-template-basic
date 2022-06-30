@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 /**
  * @param initial `boolean` initial state value
  */
 export const useCheckbox = (initial: boolean) => {
-  const [checked, set] = useState(initial);
+  const [checked, set] = useState(initial)
 
   return {
     checked,
@@ -14,5 +14,5 @@ export const useCheckbox = (initial: boolean) => {
       checked,
       onChange: (e: any) => set(e.target.checked),
     },
-  };
-};
+  }
+}

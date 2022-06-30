@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { imageUrl } from "../../shared/utility"
+import styled from 'styled-components'
+import { imageUrl } from '../../shared/utility'
 
 export const HomeBody = styled.div`
   color: #ffff;
@@ -16,7 +16,7 @@ export const SectionBlock = styled.section`
   padding-right: 85px;
   .headings {
     font-size: 40px;
-    text-transform : uppercase;
+    text-transform: uppercase;
     overflow-wrap: normal;
     font-weight: 400;
     cursor: pointer;
@@ -80,12 +80,12 @@ export const GridRowLeft = styled.div`
 `
 export const GridRowRight = styled.div`
   max-width: 375px;
-  .block{
-      grid-row : span 2;
-      border : 1px solid #FFFF;
-      border-radius : 8px;
-      min-height : 100%;
-      background-color : #FFFF;
+  .block {
+    grid-row: span 2;
+    border: 1px solid #ffff;
+    border-radius: 8px;
+    min-height: 100%;
+    background-color: #ffff;
   }
 `
 export const GR_First = styled.div`
@@ -98,7 +98,7 @@ export const GR_First = styled.div`
   border-radius: 8px;
   position: relative;
   ::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -129,29 +129,28 @@ export const GR_Second = styled.div`
   column-gap: 10px;
   .block {
     color: #ffff;
-    border-radius : 8px;
-    font-weight : 400px;
-    font-size : 36px;
+    border-radius: 8px;
+    font-weight: 400px;
+    font-size: 36px;
     border: 1px solid #ffff;
     padding: 10px 25px;
   }
 `
 
 export const ForumStyle = styled.div`
-display: grid;
-margin : 20px 0;
-grid-template-columns : 1fr 1fr ;
-column-gap : 30px;
-.left{
-    grid-row : span 3;
-    border : 1px solid #FFFF;
-    background : rgb(0 0 0 / 40%);
-    border-radius : 8px;
-}
-.right {
-    display : grid;
-    grid-template-rows : auto auto auto;
-    row-gap : 10px;
-
-}
+  display: grid;
+  margin: 20px 0;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  .left {
+    grid-row: span 3;
+    border: 1px solid #ffff;
+    background: rgb(0 0 0 / 40%);
+    border-radius: 8px;
+  }
+  .right {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 10px;
+  }
 `

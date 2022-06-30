@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 interface I_UseActiveBundle {
   active: boolean
@@ -9,12 +9,12 @@ interface I_UseActiveBundle {
 }
 
 export const useActive = (): I_UseActiveBundle => {
-  const [active, set] = useState(false);
+  const [active, set] = useState(false)
   return {
     active,
     bind: {
       onMouseDown: () => set(true),
       onMouseUp: () => set(false),
     },
-  };
-};
+  }
+}

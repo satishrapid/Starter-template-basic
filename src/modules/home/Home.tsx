@@ -1,4 +1,4 @@
-import { exampleData } from "./utility";
+import { exampleData } from './utility'
 import {
   HomeBody,
   HeadingBlock,
@@ -13,23 +13,17 @@ import {
   GR_First,
   GR_Second,
   ForumStyle,
-} from "./style";
+} from './style'
 
-import { withTheme, ThemeProps } from "styled-components";
-import { Navbar } from "../app/navbar/Navbar";
-import { PageContainer } from "../../styles/styled";
-import {
-  SharedTitle,
-  SharedDescription,
-  SharedButton,
-  SharedDetailBlock,
-  SharedForum,
-} from "../../shared/shared";
-import { FlexBox } from "../../shared/flexBox";
-import { imageUrl } from "../../shared/utility";
+import { withTheme, ThemeProps } from 'styled-components'
+import { Navbar } from '../app/navbar/Navbar'
+import { PageContainer } from '../../styles/styled'
+import { SharedTitle, SharedDescription, SharedButton, SharedDetailBlock, SharedForum } from '../../shared/shared'
+import { FlexBox } from '../../shared/flexBox'
+import { imageUrl } from '../../shared/utility'
 
 export const Home: React.FC = withTheme((props: ThemeProps<any>) => {
-  const { theme } = props;
+  const { theme } = props
 
   return (
     <PageContainer noPadding={true}>
@@ -42,10 +36,8 @@ export const Home: React.FC = withTheme((props: ThemeProps<any>) => {
           </SharedTitle>
 
           <SharedDescription>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Consectetur, nihil odio modi sed asperiores facere? Nobis
-            consectetur distinctio voluptatum maiores, maxime aliquid commodi
-            harum ipsum?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, nihil odio modi sed asperiores
+            facere? Nobis consectetur distinctio voluptatum maiores, maxime aliquid commodi harum ipsum?
           </SharedDescription>
           <SharedButton>Explore More</SharedButton>
         </HeadingBlock>
@@ -69,9 +61,8 @@ export const Home: React.FC = withTheme((props: ThemeProps<any>) => {
               <h1 className="headings and system">Ecosystem</h1>
               <h3 className="subHeading">Lorem ipsum dolor sit amet.</h3>
               <p className="descriptions">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-                ducimus quis quasi numquam, officiis ratione dignissimos non
-                aspernatur minima nemo.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere ducimus quis quasi numquam, officiis
+                ratione dignissimos non aspernatur minima nemo.
               </p>
             </Block1>
             <Block2>
@@ -87,9 +78,8 @@ export const Home: React.FC = withTheme((props: ThemeProps<any>) => {
               <GR_First>
                 <h3 className="subHeading">Lorem ipsum dolor sit amet.</h3>
                 <p className="descriptions">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Facere ducimus quis quasi numquam, officiis ratione
-                  dignissimos non aspernatur minima nemo.
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere ducimus quis quasi numquam, officiis
+                  ratione dignissimos non aspernatur minima nemo.
                 </p>
                 <SharedButton>Explore</SharedButton>
               </GR_First>
@@ -110,29 +100,20 @@ export const Home: React.FC = withTheme((props: ThemeProps<any>) => {
             <div className="right">
               <SharedForum>
                 <h3>headings</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Sapiente, earum!
-                </p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, earum!</p>
               </SharedForum>
               <SharedForum>
                 <h3>headings</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Sapiente, earum!
-                </p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, earum!</p>
               </SharedForum>
               <SharedForum>
                 <h3>headings</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Sapiente, earum!
-                </p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, earum!</p>
               </SharedForum>
             </div>
           </ForumStyle>
         </SectionBlock>
       </HomeBody>
     </PageContainer>
-  );
-});
+  )
+})

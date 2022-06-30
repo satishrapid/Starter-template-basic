@@ -1,9 +1,9 @@
-import { ButtonWrapper, ButtonAlignment } from "./style";
+import { ButtonWrapper, ButtonAlignment } from './style'
 
 interface ButtonProps {
-  children?: React.ReactNode;
-  btnType?: string;
-  align?: string;
+  children?: React.ReactNode
+  btnType?: string
+  align?: string
 }
 
 export const Button = (props: ButtonProps) => {
@@ -12,5 +12,5 @@ export const Button = (props: ButtonProps) => {
     <ButtonAlignment align={align}>
       <ButtonWrapper btnType={btnType}>{children}</ButtonWrapper>
     </ButtonAlignment>
-  );
+  )
 }

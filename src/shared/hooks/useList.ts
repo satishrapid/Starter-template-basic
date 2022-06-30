@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react'
 /**
  * @param initial `Array` initial state value
  */
 export const useList = (initial = []) => {
-  const [list, set] = useState(initial);
+  const [list, set] = useState(initial)
   return {
     list,
     set,
@@ -11,5 +11,5 @@ export const useList = (initial = []) => {
     push: (values: []) => set((prev) => [...prev, ...values]),
     sort: (fn: any) => set((prev) => [...prev].sort(fn)),
     filter: (fn: any) => set((prev) => prev.filter(fn)),
-  };
-};
+  }
+}

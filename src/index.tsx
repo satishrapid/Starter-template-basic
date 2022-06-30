@@ -7,12 +7,13 @@ import { App } from './modules/app/'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
-    <Web3ReactProvider getLibrary={getLibrary}>
+  <Web3ReactProvider getLibrary={getLibrary}>
     <BrowserRouter>
-        <App />
+      <App />
     </BrowserRouter>
-    </Web3ReactProvider>
-    , document.getElementById('root'))
+  </Web3ReactProvider>,
+  document.getElementById('root')
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -9,7 +9,7 @@ import NunitoSansSemiBold from '../assets/fonts/NunitoSans/NunitoSans-SemiBold.t
 import { rgba } from 'polished'
 
 export const LinkStyle = css`
-  color: ${props => props.theme.accent};
+  color: ${(props) => props.theme.accent};
   cursor: pointer;
 `
 
@@ -71,7 +71,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${props => props.theme.secondary};
+    background-color: ${(props) => props.theme.secondary};
   }
   html,
   body {
@@ -117,7 +117,7 @@ export const GlobalStyle = createGlobalStyle`
   label {
     font-size: ${fontSizes.XS}
     position: relative;
-    color: ${props => props.theme.label};
+    color: ${(props) => props.theme.label};
   }
   input:disabled ~ label{
    color: red;
@@ -134,7 +134,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 8px 12px;
   }
   hr {
-    background-color: ${props => rgba(props.theme.white, 0.2)};
+    background-color: ${(props) => rgba(props.theme.white, 0.2)};
     border: 0;
   }
   a {

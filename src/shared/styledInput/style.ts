@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 interface propsInput {
-  state: string;
+  state: string
 }
 const inputStyles = css`
 display: block;
@@ -29,21 +29,21 @@ display: block;
         cursor : not-allowed;
     }
 }
-`;
+`
 export const InputWrapper = styled.input<propsInput>`
- 
-  border-color :  ${(props) =>
-    (props.state == "success" && "rgb(0 128 0)") ||
-    (props.state == "error" && "rgb(255 0 0)") || 'rgb(0 123 255 / 25%)'};
-    ${inputStyles}
+  border-color: ${(props) =>
+    (props.state == 'success' && 'rgb(0 128 0)') ||
+    (props.state == 'error' && 'rgb(255 0 0)') ||
+    'rgb(0 123 255 / 25%)'};
+  ${inputStyles}
   :focus,
   :hover {
     border-color: ${(props) =>
-      (props.state == "success" && "rgb(0 128 0)") ||
-      (props.state == "error" && "rgb(255 0 0)")};
+      (props.state == 'success' && 'rgb(0 128 0)') || (props.state == 'error' && 'rgb(255 0 0)')};
     box-shadow: 0 0 0 0.2rem
       ${(props) =>
-        (props.state == "success" && "rgb(0 128 0 / 25%)") ||
-        (props.state == "error" && "rgb(255 0 0 / 25%)") || 'rgb(0 123 255 / 25%)'};
+        (props.state == 'success' && 'rgb(0 128 0 / 25%)') ||
+        (props.state == 'error' && 'rgb(255 0 0 / 25%)') ||
+        'rgb(0 123 255 / 25%)'};
   }
-`;
+`

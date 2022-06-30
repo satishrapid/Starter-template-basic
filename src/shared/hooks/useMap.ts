@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react'
 /**
  * @param initial `Object {}` initial state value
  */
 export const useMap = (initial = {}) => {
-  const [values, set] = useState<any>(initial);
+  const [values, set] = useState<any>(initial)
   return {
     values,
     reset: () => set(initial),
@@ -14,7 +14,7 @@ export const useMap = (initial = {}) => {
     set: (key: any, updater: any) =>
       set((prev: any) => ({
         ...prev,
-        [key]: typeof updater === "function" ? updater(prev[key]) : updater,
+        [key]: typeof updater === 'function' ? updater(prev[key]) : updater,
       })),
-  };
-};
+  }
+}

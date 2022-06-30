@@ -2,11 +2,17 @@
   "name": "temp",
   "private": true,
   "version": "1.0",
+  "engines": {
+    "node": "^14 || ^16"
+  },
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "lint": "yarn run eslint --ext .ts,.tsx ."
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.16.4",
@@ -54,17 +60,31 @@
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
+    "@commitlint/cli": "^17.0.3",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
-    "@types/react": "^18.0.8",
     "@types/react-datepicker": "^4.4.1",
-    "@types/react-dom": "^18.0.3",
     "@types/react-table": "^7.7.10",
     "@types/styled-components": "^5.1.17",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
     "babel-loader": "^8.2.3",
+    "commitlint-config-jira": "^1.6.4",
+    "commitlint-plugin-jira-rules": "^1.6.4",
+    "eslint": "^8.18.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tsdoc": "^0.2.16",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.4.0"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "npx prettier --write"    
+    ]
   }
 }

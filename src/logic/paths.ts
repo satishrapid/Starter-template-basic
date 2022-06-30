@@ -1,10 +1,10 @@
 import { Hash, UrlPath, Uuid } from '../shared/helpers/util'
 
 export interface UserProps {
-    user: string
+  user: string
 }
 export interface UserUrlProps extends UserProps {
-    organization: Uuid
+  organization: Uuid
 }
 
 // Basic

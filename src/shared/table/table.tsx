@@ -11,9 +11,13 @@ import {
   UsePaginationOptions,
   useTable,
   useSortBy,
-  useRowSelect, Column, IdType, Cell,
+  useRowSelect,
+  Column,
+  IdType,
+  Cell,
   UsePaginationState,
-  SortingRule, TableState,
+  SortingRule,
+  TableState,
 } from 'react-table'
 import { rgba } from 'polished'
 import { gapSizes } from '../../styles/theme'
@@ -21,30 +25,30 @@ import { gapSizes } from '../../styles/theme'
 const rowHeight = '60px'
 export const StyledTable = styled.div<any>`
   transition: all 300ms ease-in;
-  padding-right: ${props => props.fixed ? '5px' : ''};
+  padding-right: ${(props) => (props.fixed ? '5px' : '')};
   padding-bottom: 20px;
-  overflow-y: ${props => props.scrollingTable ? 'visible' : 'auto'};
+  overflow-y: ${(props) => (props.scrollingTable ? 'visible' : 'auto')};
   overflow-x: auto;
   scrollbar-height: 10px;
   &::-webkit-scrollbar {
     height: 10px;
-    background-color: ${props => props.theme.primary};
+    background-color: ${(props) => props.theme.primary};
     border-radius: 4px;
   }
   &::-webkit-scrollbar-thumb {
     border: 1px solid transparent;
-    background-color: ${props => props.theme.tertiary};
+    background-color: ${(props) => props.theme.tertiary};
     border-radius: 4px;
     background-clip: content-box;
   }
   table {
-    color: ${props => props.theme.white};
+    color: ${(props) => props.theme.white};
     width: 100%;
-    min-width: ${props => props.fixed ? '375px' : '900px'}; //Should find a better mobile optimized solution
+    min-width: ${(props) => (props.fixed ? '375px' : '900px')}; //Should find a better mobile optimized solution
     border-collapse: collapse;
     border: 1px solid transparent;
     border-spacing: 0;
-    border-radius: ${props => props.theme.radius};
+    border-radius: ${(props) => props.theme.radius};
     padding-right: 20px;
     .ellipses {
       width: 30px;
@@ -60,13 +64,14 @@ export const StyledTable = styled.div<any>`
       text-align: center !important;
     }
     .basic {
-      border-right: 2px solid ${props => rgba(props.theme.white, 0.1)} !important;
+      border-right: 2px solid ${(props) => rgba(props.theme.white, 0.1)} !important;
     }
-    .division, .percentage {
+    .division,
+    .percentage {
       border: none;
     }
     .division1 {
-      background-color: ${props => props.theme.secondary};
+      background-color: ${(props) => props.theme.secondary};
       width: 5px;
       padding: 0;
       border: none;
@@ -74,38 +79,38 @@ export const StyledTable = styled.div<any>`
     .footer {
       background-color: transparent;
       border-top: 2px solid;
-      border-color: ${props => rgba(props.theme.white, 0.1)};
+      border-color: ${(props) => rgba(props.theme.white, 0.1)};
     }
     thead {
       text-transform: uppercase;
       tr {
-        background-color: ${props => props.theme.tableHeader} !important;
+        background-color: ${(props) => props.theme.tableHeader} !important;
       }
     }
     tr {
-      background-color: ${props => props.theme.subRow};
+      background-color: ${(props) => props.theme.subRow};
       &[role='row'] {
-        background-color: ${props => props.theme.tableRow};
-        > *:nth-child(${props => (props.expandable ? 2 : 1)}) {
+        background-color: ${(props) => props.theme.tableRow};
+        > *:nth-child(${(props) => (props.expandable ? 2 : 1)}) {
           font-weight: bold;
           font-family: NunitoSansBold;
         }
       }
-      > *:nth-child(${props => (props.expandable ? 2 : 1)}) {
+      > *:nth-child(${(props) => (props.expandable ? 2 : 1)}) {
         text-align: left;
       }
     }
     th,
     td {
       white-space: nowrap;
-      text-align: ${props => !props.fixed ? 'right' : 'left'};
-      padding: ${props => props.id === 'expander' ? `0 ${gapSizes.M}` : `0 ${gapSizes.S}`};
+      text-align: ${(props) => (!props.fixed ? 'right' : 'left')};
+      padding: ${(props) => (props.id === 'expander' ? `0 ${gapSizes.M}` : `0 ${gapSizes.S}`)};
       border-right: 2px solid;
-      border-color: ${props => rgba(props.theme.white, 0.1)};
+      border-color: ${(props) => rgba(props.theme.white, 0.1)};
       &:first-child {
-        text-align: ${props => props.expandable && 'center'};
-        padding: ${props => props.expandable && `0 10px`};
-        border: ${props => props.withBorders === 'false' && 'none'};
+        text-align: ${(props) => props.expandable && 'center'};
+        padding: ${(props) => props.expandable && `0 10px`};
+        border: ${(props) => props.withBorders === 'false' && 'none'};
       }
       &:last-child {
         border: none;
@@ -124,16 +129,16 @@ export const StyledTable = styled.div<any>`
     tbody {
       tr {
         border-top: 2px solid;
-        border-color: ${props => rgba(props.theme.white, 0.1)};
+        border-color: ${(props) => rgba(props.theme.white, 0.1)};
         :first-child {
-          border: ${props => props.noHeader === 'true' && 'none'};
+          border: ${(props) => props.noHeader === 'true' && 'none'};
         }
       }
     }
     tfoot {
       td {
-        background-color: ${props => props.theme.tableRow};
-        &:nth-child(${props => (props.expandable ? 2 : 1)}) > div {
+        background-color: ${(props) => props.theme.tableRow};
+        &:nth-child(${(props) => (props.expandable ? 2 : 1)}) > div {
           justify-content: flex-start;
         }
         > div {
@@ -151,17 +156,19 @@ export const TableRow = styled.tr<any>`
   height: ${rowHeight};
   padding: 0 ${gapSizes.S};
   td:not(:first-child) {
-    opacity: ${props => props.isSelected !== undefined ? props.isSelected ? '' : '0.2' : ''};
+    opacity: ${(props) => (props.isSelected !== undefined ? (props.isSelected ? '' : '0.2') : '')};
   }
   &:not([role='row']) {
     > td:first-child {
-      border-bottom: ${props => props.fixed ? '2px solid transparent' : ''};
+      border-bottom: ${(props) => (props.fixed ? '2px solid transparent' : '')};
     }
   }
 `
 
-export interface TableOptions<D extends object> extends UsePaginationOptions<D>, UseExpandedOptions<D>, UsePaginationState<D> {
-}
+export interface TableOptions<D extends object>
+  extends UsePaginationOptions<D>,
+    UseExpandedOptions<D>,
+    UsePaginationState<D> {}
 
 export type RowsState<T = any> = Record<IdType<T>, boolean> | undefined
 export type SortRowsState<D = any> = Array<SortingRule<D>>
@@ -173,7 +180,7 @@ export interface TableRowProps<T extends object> {
   selectedRows?: RowsState<T>
 }
 
-export type ColumnWithFooter<T extends object = any> = Column<T> & { Footer?: any, className?: string }
+export type ColumnWithFooter<T extends object = any> = Column<T> & { Footer?: any; className?: string }
 
 interface Props<T extends object> {
   columns: Array<ColumnWithFooter<T>>
@@ -199,7 +206,7 @@ interface SortProps<D extends object> {
 }
 
 export function isRowSelected<T>(selectedRows: RowsState<T>, rowId: string) {
-  return !selectedRows || Object.values(selectedRows).every(r => !r) || !!selectedRows[rowId]
+  return !selectedRows || Object.values(selectedRows).every((r) => !r) || !!selectedRows[rowId]
 }
 
 export function renderTableRowCells<T extends object>(cells: Array<Cell<T>>) {
@@ -216,11 +223,7 @@ export function renderTableRowCells<T extends object>(cells: Array<Cell<T>>) {
 export function CommonTableRow<T extends object>(props: TableRowProps<T>) {
   const { row, selectedRows } = props
   return (
-    <TableRow
-      isExpanded={false}
-      {...row.getRowProps()}
-      isSelected={isRowSelected(selectedRows, row.id)}
-    >
+    <TableRow isExpanded={false} {...row.getRowProps()} isSelected={isRowSelected(selectedRows, row.id)}>
       {renderTableRowCells(row.cells)}
     </TableRow>
   )
@@ -243,12 +246,15 @@ export function Table<T extends TableOptions<T>>(props: Props<T> & SortProps<any
     withAllBorders,
     noHeader,
     noFooter,
-    description } = props
+    description,
+  } = props
   const RowComponent = props.rowComponent || CommonTableRow
-  const paginationProps = manualPagination ? {
-    manualPagination: manualPagination,
-    pageCount: 1,
-  } : {}
+  const paginationProps = manualPagination
+    ? {
+        manualPagination: manualPagination,
+        pageCount: 1,
+      }
+    : {}
   const {
     getTableProps,
     getTableBodyProps,
@@ -302,69 +308,65 @@ export function Table<T extends TableOptions<T>>(props: Props<T> & SortProps<any
         fixed={fixed}
         scrollingTable={scrollingTable}
         withBorders={withAllBorders ? 'true' : 'false'}
-        noHeader={noHeader ? 'true' : 'false'}>
+        noHeader={noHeader ? 'true' : 'false'}
+      >
         <div>
           <table {...getTableProps()}>
-            {!noHeader && <thead>
-              {headerGroups.map((headerGroup: HeaderGroup<T>) => (
-                <TableRow {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column: any, i: number) => {
-                    const sorted = sortById?.filter(s => s.id === column.id)[0]
-                    return handleSort && sortById ?
-                      (
+            {!noHeader && (
+              <thead>
+                {headerGroups.map((headerGroup: HeaderGroup<T>) => (
+                  <TableRow {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map((column: any, i: number) => {
+                      const sorted = sortById?.filter((s) => s.id === column.id)[0]
+                      return handleSort && sortById ? (
                         <th key={i} className={column.className!}>
-                          {typeof column.Header === 'string' && column.Header.length > 0 ?
+                          {typeof column.Header === 'string' && column.Header.length > 0 ? (
                             <div onClick={() => handleSort && handleSort(column.id)}>
                               {column.render('Header')}
-                              <span>
-                                {column?.accessor! &&
-                                  <div>
-                                    // uptick svg
-                                  </div>
-                                }
-                              </span>
+                              <span>{column?.accessor! && <div>// uptick svg</div>}</span>
                             </div>
-                            :
-                            null}
+                          ) : null}
                         </th>
-                      )
-                      : (
+                      ) : (
                         <th
                           {...column.getHeaderProps(column.getSortByToggleProps())}
                           className={column.className!}
                           onClick={() => column.toggleSortBy(!column.isSortedDesc, false)}
                         >
                           {column.render('Header')}
-                          {column.isSorted && <span>
-                            // uptick svg
-                          </span>}
+                          {column.isSorted && <span>// uptick svg</span>}
                         </th>
                       )
-                  })}
-                </TableRow>
-              ))}
-            </thead>}
+                    })}
+                  </TableRow>
+                ))}
+              </thead>
+            )}
             <tbody {...getTableBodyProps()}>
               {rows.map((row, i) => {
                 prepareRow(row)
                 return (
                   <tr {...row.getRowProps()}>
-                    {row.cells.map(cell => {
+                    {row.cells.map((cell) => {
                       return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                     })}
                   </tr>
                 )
               })}
             </tbody>
-            {!noFooter && <tfoot>
-              {footerGroups.map((group: HeaderGroup<T>) => (
-                <tr className={'footer'} {...group.getFooterGroupProps()}>
-                  {group.headers.map((column: any) => (
-                    <td {...column.getFooterProps()} className={column.className!}>{column.render('Footer')}</td>
-                  ))}
-                </tr>
-              ))}
-            </tfoot>}
+            {!noFooter && (
+              <tfoot>
+                {footerGroups.map((group: HeaderGroup<T>) => (
+                  <tr className={'footer'} {...group.getFooterGroupProps()}>
+                    {group.headers.map((column: any) => (
+                      <td {...column.getFooterProps()} className={column.className!}>
+                        {column.render('Footer')}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tfoot>
+            )}
           </table>
         </div>
       </StyledTable>

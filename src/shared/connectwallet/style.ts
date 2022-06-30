@@ -1,6 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components'
 
-export const Content = styled.div``;
+export const Content = styled.div``
 export const SemiHead = styled.p`
   font-size: 12px;
   line-height: 19px;
@@ -10,17 +10,17 @@ export const SemiHead = styled.p`
   @media (min-width: 700px) {
     font-size: 16px;
   }
-`;
-export const AddressInfoWrap = styled.div<{menu:any}>`
+`
+export const AddressInfoWrap = styled.div<{ menu: any }>`
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {
     transform: translateX(-125px);
   }
   @media (min-width: 600px) {
-    transform: ${props => props.menu ? 'translateX(-107%)':'inherit'};
+    transform: ${(props) => (props.menu ? 'translateX(-107%)' : 'inherit')};
   }
-`;
+`
 export const ConnectButtonWrap = styled.div`
   display: flex;
   justify-content: center;
@@ -44,10 +44,10 @@ export const ConnectButtonWrap = styled.div`
     background: rgba(186, 169, 255, 0.1);
   }
   @media (max-width: 600px) {
-    transform: translateX(-134px)
+    transform: translateX(-134px);
   }
-`;
-export const BnbInfo = styled.div<{menu:any}>`
+`
+export const BnbInfo = styled.div<{ menu: any }>`
   background: transparent;
   color: #fff;
   font-size: 12px;
@@ -63,13 +63,13 @@ export const BnbInfo = styled.div<{menu:any}>`
   @media (min-width: 600px) {
     font-size: 12px;
     padding: 12px 50px 33px 15px;
-    width:${props => props.menu ? '80px':'inherit'}
+    width: ${(props) => (props.menu ? '80px' : 'inherit')};
   }
   @media (min-width: 1200px) {
     font-size: 16px;
     padding: 12px 50px 33px 25px;
   }
-`;
+`
 
 export const AddressInfo = styled.div`
   background: #0d0d13;
@@ -95,12 +95,12 @@ export const AddressInfo = styled.div`
     padding: 12px 25px 33px 25px;
     width: 120px;
   }
-`;
+`
 
 export const OptionArea = styled.div`
   border-radius: 0px;
   margin-bottom: 25px;
-`;
+`
 
 export const WalletOption = styled.div`
   background: #000;
@@ -131,7 +131,7 @@ export const WalletOption = styled.div`
     color: #000;
     margin-top: 15px;
   }
-`;
+`
 
 export const WalletDetails = styled.div`
   margin-top: 40px;
@@ -145,7 +145,7 @@ export const WalletDetails = styled.div`
     text-align: center;
     word-break: break-all;
   }
-`;
+`
 
 export const LinksFlex = styled.div`
   display: flex;
@@ -179,7 +179,7 @@ export const LinksFlex = styled.div`
     font-family: Light;
     margin: 0;
   }
-`;
+`
 const breatheAnimation = keyframes`
  0% {  transform: translateY(0px);}
  25% {  transform: translateY(15px);}
@@ -187,10 +187,10 @@ const breatheAnimation = keyframes`
  75% { transform: translateY(5px); }
  100% { transform: translateY(0px); }
 
- `;
+ `
 export const StatusImage = styled.img`
   animation: ${breatheAnimation} 1.5s linear infinite;
-`;
+`
 export const StatusContent = styled.div`
   text-align: center;
   a {
@@ -225,7 +225,7 @@ export const StatusContent = styled.div`
     color: #fff;
     font-weight: 300;
   }
-`;
+`
 
 export const LinkFlex = styled.div`
   display: flex;
@@ -233,23 +233,22 @@ export const LinkFlex = styled.div`
   img {
     margin-top: -4px;
   }
-`;
+`
 export const ButtonWrapper = styled.div`
   display: flex;
-`;
+`
 
 export const ConnectLink = styled.a`
-        font-size : 21px;
-        text-decoration : none ;
-        color : #FFFF;
-        padding : 15px 20px;
-        margin : 0 10px;
-        border : 2px solid  #455757;
-        transition : all linear 0.5s;
-        &:hover {
-            color : #FFFF;
-            opacity : 0.8;
-            box-shadow : 5px 5px  #ebda86;
-        
-        }
+  font-size: 21px;
+  text-decoration: none;
+  color: #ffff;
+  padding: 15px 20px;
+  margin: 0 10px;
+  border: 2px solid #455757;
+  transition: all linear 0.5s;
+  &:hover {
+    color: #ffff;
+    opacity: 0.8;
+    box-shadow: 5px 5px #ebda86;
+  }
 `

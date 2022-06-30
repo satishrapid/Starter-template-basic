@@ -28,4 +28,4 @@
 // }
 
 // export default history;
-export { }
+export {}

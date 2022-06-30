@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 interface ModalBodyProps {
-  show: boolean;
+  show: boolean
 }
 
 export const ModelHead = styled.div`
@@ -13,17 +13,17 @@ export const ModelHead = styled.div`
     font-weight: 600;
     font-size: 16px;
     line-height: 25px;
-    font-family:SemiBold;
+    font-family: SemiBold;
     margin: 0;
     @media (min-width: 700px) {
       font-size: 24px;
       line-height: 30px;
     }
   }
-`;
+`
 
 export const ModalBody = styled.div<ModalBodyProps>`
-  display: ${(props) => (props.show ? "block" : "none")};
+  display: ${(props) => (props.show ? 'block' : 'none')};
   position: fixed;
   z-index: 100;
   left: 0;
@@ -34,7 +34,7 @@ export const ModalBody = styled.div<ModalBodyProps>`
   background: rgb(9 34 39 / 50%);
   border: 1px solid rgba(186, 169, 255, 0.1);
   backdrop-filter: blur(15px);
-`;
+`
 
 export const ModalContent = styled.div<any>`
   padding: 20px;
@@ -61,7 +61,7 @@ export const ModalContent = styled.div<any>`
   @media (min-width: 1200px) {
     width: 524px;
   }
-`;
+`
 
 export const ModalContainerHeading = styled.p`
   font-style: normal;
@@ -72,11 +72,11 @@ export const ModalContainerHeading = styled.p`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0;
-`;
+`
 export const ModalContainerText = styled.p`
   font-size: 16px;
   margin: 0;
-`;
+`
 
 // export const CloseButton = styled.div`
 //   display: flex;
@@ -97,7 +97,7 @@ export const ModalContainerText = styled.p`
 //   }
 // `;
 
-export const CloseButton = styled.div``;
+export const CloseButton = styled.div``
 export const Close = styled.img`
   cursor: pointer;
   margin-right: auto;
@@ -105,4 +105,4 @@ export const Close = styled.img`
     cursor: pointer;
     margin-right: 0;
   }
-`;
+`

@@ -1,14 +1,10 @@
-import { FlexContainer } from "./style"
+import { FlexContainer } from './style'
 
 interface FlexProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 
 export const FlexBox = (props: FlexProps) => {
   const { children } = props
-  return (
-    <FlexContainer>
-      {children}
-    </FlexContainer>
-  );
+  return <FlexContainer>{children}</FlexContainer>
 }
